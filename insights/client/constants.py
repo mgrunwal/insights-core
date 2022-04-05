@@ -83,19 +83,14 @@ class InsightsConstants(object):
     sig_kill_ok = 100
     sig_kill_bad = 101
     cached_branch_info = os.path.join(default_conf_dir, '.branch_info')
-    pidfile = os.path.join(os.sep, _aux_var, 'run', 'insights-client.pid')
-    egg_release_file = os.path.join(os.sep, _aux_var, 'tmp', 'insights-client', 'insights-client-egg-release') # !!! check if it should be replaced, THINK ABOUT IT
+    pidfile = os.path.join(os.sep, 'var', 'run', 'insights-client.pid')
+    egg_release_file = os.path.join(os.sep, 'var', 'tmp', 'insights-client', 'insights-client-egg-release') # !!! check if it should be replaced, THINK ABOUT IT
     ppidfile = os.path.join(os.sep, 'tmp', 'insights-client.ppid')
     valid_compressors = ("gz", "xz", "bz2", "none")
     # RPM version in which core collection was released
     core_collect_rpm_version = '3.1.0'
     rhsm_facts_dir = os.path.join(os.sep, '/etc', 'rhsm', 'facts')
     rhsm_facts_file = os.path.join(os.sep, '/etc', 'rhsm', 'facts', 'insights-client.facts')
-
-    aux_varlib = _aux_varlib
-    default_lib_dir = os.path.join(_aux_varlib, 'insights')
-    aux_etc = _aux_etc
-    default_conf_dir = os.path.join(_aux_etc, 'insights-client')
 
 
 
