@@ -50,7 +50,7 @@ class InsightsConstants(object):
     default_conf_file = os.path.join(default_conf_dir, 'insights-client.conf')
     default_tags_file = os.path.join(default_conf_dir, 'tags.yaml')
     log_dir = _log_dir()
-    simple_find_replace_dir = os.path.join(_aux_etc ,'/redhat-access-insights') # !!! check if it should be replaced, THINK ABOUT IT
+    simple_find_replace_dir = os.path.join(_aux_etc ,'/redhat-access-insights')
     default_log_file = os.path.join(log_dir, app_name + '.log')
     default_payload_log = os.path.join(log_dir, app_name + '-payload.log')
     custom_network_log_level = 11
@@ -84,12 +84,12 @@ class InsightsConstants(object):
     cached_branch_info = os.path.join(default_conf_dir, '.branch_info')
     pidfile = os.path.join(os.sep, _aux_var, 'run', 'insights-client.pid')
     egg_release_file = os.path.join(os.sep, _aux_var, 'tmp', 'insights-client', 'insights-client-egg-release') # !!! check if it should be replaced, THINK ABOUT IT
-    ppidfile = os.path.join(os.sep, 'tmp', 'insights-client.ppid') # !!! check if it should be replaced, THINK ABOUT IT
+    ppidfile = os.path.join(os.sep, 'tmp', 'insights-client.ppid')
     valid_compressors = ("gz", "xz", "bz2", "none")
     # RPM version in which core collection was released
     core_collect_rpm_version = '3.1.0'
-    rhsm_facts_dir = os.path.join(os.sep, _aux_etc, 'rhsm', 'facts')
-    rhsm_facts_file = os.path.join(os.sep, _aux_etc, 'rhsm', 'facts', 'insights-client.facts')
+    rhsm_facts_dir = os.path.join(os.sep, '/etc', 'rhsm', 'facts')
+    rhsm_facts_file = os.path.join(os.sep, '/etc', 'rhsm', 'facts', 'insights-client.facts')
 
     aux_varlib = _aux_varlib
     aux_varlib_insights = os.path.join(_aux_varlib, 'insights')
