@@ -557,7 +557,7 @@ class InsightsClient(object):
         Show insights about this machine
         '''
         try:
-            with open(os.path.join(constants.aux_varlib_insights, "insights-details.json"), mode="r+b") as f:
+            with open(os.path.join(constants.default_lib_dir, "insights-details.json"), mode="r+b") as f:
                 insights_data = json.load(f)
             print(json.dumps(insights_data, indent=1))
         except IOError as e:
