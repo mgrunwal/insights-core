@@ -47,6 +47,7 @@ class InsightsConstants(object):
     sleep_time = 180
     command_blacklist = ('rm', 'kill', 'reboot', 'shutdown')
     default_conf_dir = os.getenv('INSIGHTS_CONF_DIR', default='/etc/insights-client')
+    default_lib_dir = os.getenv('INSIGHTS_LIB_DIR',default='/var/lib/insights-client')
     default_conf_file = os.path.join(default_conf_dir, 'insights-client.conf')
     default_tags_file = os.path.join(default_conf_dir, 'tags.yaml')
     log_dir = _log_dir()
