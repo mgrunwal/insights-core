@@ -40,7 +40,6 @@ def _lib_dir():
 
 
 class InsightsConstants(object):
-
     app_name = _app_name
     auth_method = 'BASIC'
     package_path = os.path.dirname(
@@ -92,5 +91,6 @@ class InsightsConstants(object):
     rhsm_facts_dir = os.path.join(os.sep, _aux_etc, 'rhsm', 'facts')
     rhsm_facts_file = os.path.join(os.sep, _aux_etc, 'rhsm', 'facts', 'insights-client.facts')
 
+    aux_varlib_insights = os.path.join(_aux_var_lib, 'insights')
 
 
