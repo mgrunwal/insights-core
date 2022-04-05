@@ -95,7 +95,7 @@ class InsightsConstants(object):
     aux_varlib = _aux_varlib
     default_lib_dir = os.path.join(_aux_varlib, 'insights')
     aux_etc = _aux_etc
-    aux_etc_insights_client = os.path.join(_aux_etc, 'insights-client')
+    default_conf_dir = os.path.join(_aux_etc, 'insights-client')
 
 
 

@@ -322,7 +322,7 @@ class DefaultSpecs(Specs):
     imagemagick_policy = glob_file(["/etc/ImageMagick/policy.xml", "/usr/lib*/ImageMagick-6.5.4/config/policy.xml"])
     initctl_lst = simple_command("/sbin/initctl --system list")
     init_process_cgroup = simple_file("/proc/1/cgroup")
-    insights_client_conf = simple_file(os.path.join(constants.aux_etc_insights_client, 'insights-client.conf'))
+    insights_client_conf = simple_file(os.path.join(constants.default_conf_dir, 'insights-client.conf'))
     interrupts = simple_file("/proc/interrupts")
     ip_addr = simple_command("/sbin/ip addr")
     ip_addresses = simple_command("/bin/hostname -I")
@@ -349,7 +349,7 @@ class DefaultSpecs(Specs):
     krb5 = glob_file([r"etc/krb5.conf", r"etc/krb5.conf.d/*"])
     ksmstate = simple_file("/sys/kernel/mm/ksm/run")
     kubepods_cpu_quota = glob_file("/sys/fs/cgroup/cpu/kubepods.slice/kubepods-burstable.slice/kubepods-burstable-pod[a-f0-9_]*.slice/cpu.cfs_quota_us")
-    last_upload_globs = ["/etc/redhat-access-insights/.lastupload", os.path.join(constants.aux_etc_insights_client, ".lastupload")]
+    last_upload_globs = ["/etc/redhat-access-insights/.lastupload", os.path.join(constants.default_conf_dir, ".lastupload")]
     lastupload = glob_file(last_upload_globs)
     ld_library_path_of_user = sap.ld_library_path_of_user
     ldif_config = glob_file("/etc/dirsrv/slapd-*/dse.ldif")
