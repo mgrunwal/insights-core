@@ -7,9 +7,10 @@ _user_cache = os.getenv('XDG_CACHE_HOME', default=os.path.join(_user_home, '.cac
 
 # Auxiliary constant with temporary values going
 # to be replaced by needed values in future
-_aux_etc = '/etc'
-_aux_var = '/var'
-_aux_varlib = '/var/lib'
+_default_conf_dir = os.getenv('INSIGHTS_CONF_DIR',
+                             default='/etc/insights-client')
+_default_lib_dir = os.getenv('INSIGHTS_LIB_DIR',
+                            default='/var/lib/insights-client')
 
 def _log_dir():
     '''
@@ -19,7 +20,7 @@ def _log_dir():
     Non-root user: $XDG_CACHE_HOME/insights-client || $HOME/.cache/insights-client/log
     '''
     if _uid == 0:
-        insights_log_dir = os.path.join(os.sep, _aux_var, 'log', _app_name)
+        insights_log_dir = os.path.join(os.sep, _default_lib_dir, 'log', _app_name)
     else:
         insights_log_dir = os.path.join(_user_cache, _app_name, 'log')
     return insights_log_dir
@@ -33,25 +34,28 @@ def _lib_dir():
     Non-root user: $XDG_CACHE_HOME/insights-client || $HOME/.cache/insights-client/lib
     '''
     if _uid == 0:
-        insights_lib_dir = os.path.join(os.sep, _aux_var, 'lib', 'insights')
+        insights_lib_dir = os.path.join(os.sep, _default_lib_dir, 'lib', 'insights')
     else:
         insights_lib_dir = os.path.join(_user_cache, _app_name, 'lib')
     return insights_lib_dir
 
 
 class InsightsConstants(object):
+    
+    default_conf_dir = _default_conf_dir
+    default_lib_dir = _default_lib_dir
+
     app_name = _app_name
     auth_method = 'BASIC'
     package_path = os.path.dirname(
         os.path.dirname(os.path.abspath(__file__)))
     sleep_time = 180
     command_blacklist = ('rm', 'kill', 'reboot', 'shutdown')
-    default_conf_dir = os.getenv('INSIGHTS_CONF_DIR', default='/etc/insights-client')
-    default_lib_dir = os.getenv('INSIGHTS_LIB_DIR',default='/var/lib/insights-client')
+
     default_conf_file = os.path.join(default_conf_dir, 'insights-client.conf')
     default_tags_file = os.path.join(default_conf_dir, 'tags.yaml')
     log_dir = _log_dir()
-    simple_find_replace_dir = os.path.join(_aux_etc ,'/redhat-access-insights')
+    simple_find_replace_dir = os.path.join(default_conf_dir ,'/redhat-access-insights')
     default_log_file = os.path.join(log_dir, app_name + '.log')
     default_payload_log = os.path.join(log_dir, app_name + '-payload.log')
     custom_network_log_level = 11
