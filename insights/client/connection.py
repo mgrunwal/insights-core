@@ -1043,12 +1043,12 @@ class InsightsConnection(object):
         if host_details["total"] > 1:
             raise Exception("Error: multiple hosts detected (insights_id = %s)" % generate_machine_id())
 
-        if not os.path.exists("/var/lib/insights"):
-            os.makedirs("/var/lib/insights", mode=0o755)
+        if not os.path.exists(constants.aux_varlib_insights):
+            os.makedirs(constants.aux_varlib_insights, mode=0o755)
 
-        with open("/var/lib/insights/host-details.json", mode="w+b") as f:
+        with open(os.path.join(constants.aux_varlib_insights, "host-details.json"), mode="w+b") as f:
             f.write(content)
-            logger.debug("Wrote \"/var/lib/insights/host-details.json\"")
+            logger.debug('Wrote "{}"'.format(os.path.join(constants.aux_varlib_insights, "host-details.json")))
 
         host_id = host_details["results"][0]["id"]
         url = self.base_url + "/insights/v1/system/%s/reports/" % host_id
@@ -1056,9 +1056,11 @@ class InsightsConnection(object):
         if content is None:
             return None
 
-        with open("/var/lib/insights/insights-details.json", mode="w+b") as f:
+        with open(os.path.join(constants.aux_varlib_insights, "/insights-details.json"), mode="w+b") as f:
             f.write(content)
-            logger.debug("Wrote \"/var/lib/insights/insights-details.json\"")
+            logger.debug('Wrote "{}"'.format(
+                os.path.join(constants.aux_varlib_insights,
+                             "insights-details.json")))
 
         return json.loads(content)
 

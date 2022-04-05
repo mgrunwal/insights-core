@@ -9,7 +9,7 @@ _user_cache = os.getenv('XDG_CACHE_HOME', default=os.path.join(_user_home, '.cac
 # to be replaced by needed values in future
 _aux_etc = '/etc'
 _aux_var = '/var'
-_aux_var_lib = '/var/lib'
+_aux_varlib = '/var/lib'
 
 def _log_dir():
     '''
@@ -91,6 +91,10 @@ class InsightsConstants(object):
     rhsm_facts_dir = os.path.join(os.sep, _aux_etc, 'rhsm', 'facts')
     rhsm_facts_file = os.path.join(os.sep, _aux_etc, 'rhsm', 'facts', 'insights-client.facts')
 
-    aux_varlib_insights = os.path.join(_aux_var_lib, 'insights')
+    aux_varlib = _aux_varlib
+    aux_varlib_insights = os.path.join(_aux_varlib, 'insights')
+    aux_etc = _aux_etc
+    aux_etc_insights_client = os.path.join(_aux_etc, 'insights-client')
+
 
 
