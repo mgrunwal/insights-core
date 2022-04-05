@@ -259,8 +259,8 @@ def print_egg_versions():
     logger.debug('All egg versions:')
     eggs = [
         os.getenv('EGG'),
-        os.path.join(constants.aux_varlib_insights, 'newest.egg'),
-        os.path.join(constants.aux_varlib_insights, 'last_stable.egg'),
+        os.path.join(constants.default_lib_dir, 'newest.egg'),
+        os.path.join(constants.default_lib_dir, 'last_stable.egg'),
         os.path.join(constants.aux_etc_insights_client, 'rpm.egg')
     ]
     if not sys.executable:
