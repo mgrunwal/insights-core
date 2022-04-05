@@ -261,7 +261,7 @@ def print_egg_versions():
         os.getenv('EGG'),
         os.path.join(constants.default_lib_dir, 'newest.egg'),
         os.path.join(constants.default_lib_dir, 'last_stable.egg'),
-        os.path.join(constants.aux_etc_insights_client, 'rpm.egg')
+        os.path.join(constants.default_conf_dir, 'rpm.egg')
     ]
     if not sys.executable:
         logger.debug('Python executable not found.')
