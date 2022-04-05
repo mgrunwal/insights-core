@@ -93,7 +93,7 @@ class InsightsConstants(object):
     rhsm_facts_file = os.path.join(os.sep, '/etc', 'rhsm', 'facts', 'insights-client.facts')
 
     aux_varlib = _aux_varlib
-    aux_varlib_insights = os.path.join(_aux_varlib, 'insights')
+    default_lib_dir = os.path.join(_aux_varlib, 'insights')
     aux_etc = _aux_etc
     aux_etc_insights_client = os.path.join(_aux_etc, 'insights-client')
 
